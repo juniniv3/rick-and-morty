@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  gitHubURL = "";
+  gitHubURL = "https://github.com/juniniv3/rick-and-morty";
   constructor() { }
 
   ngOnInit(): void {
