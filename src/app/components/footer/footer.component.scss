@@ -1,0 +1,30 @@
+.general-footer {
+  bottom: 0;
+  background-color: var(--main-text-color);
+  position: initial;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  height: 70px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+}
+
+.general-footer__image {
+  height: 50px;
+  width: auto;
+  margin-left: 40px;
+}
+
+.general-footer__github-logo {
+  width: 40px;
+  height: auto;
+  margin-left: auto;
+  margin-right: 40px;
+  &:hover {
+    cursor: pointer;
+  }
+}

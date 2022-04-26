@@ -1,0 +1,13 @@
+<div class="location-profile">
+  <div class="location-profile__information">
+    <span class="location-profile__name">{{location.name}}</span>
+    <div><span class="location-profile__type">{{location.type}}</span> -  <strong>Dimensión</strong> <span> ({{location.dimension}})</span></div>
+  </div>
+  <h3 class="location-profile__residents-tittle">Residentes:</h3>
+  <div class="location-profile__residents">
+    <div *ngFor="let resident of residents" class="location-profile__resident">
+      <img  class="location-profile__resident-photo" src="{{resident.image}}" alt="">
+      <div class="location-profile__resident-photo-label">{{resident.name }}</div>
+    </div>
+  </div>
+</div>

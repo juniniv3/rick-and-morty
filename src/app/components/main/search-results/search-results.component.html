@@ -1,0 +1,45 @@
+<div  *ngIf="searchResult.results.length" class="character-results-container">
+  <h2 class="search-title">Personajes Encontrados: {{searchResult.info.count}}</h2>
+
+  <div class="character-results">
+    <div class="character-profile" *ngFor=" let character of searchResult.results ">
+      <div class="character-profile__header">
+        <img class="character-profile__photo" src={{character.image}} alt="" (click)="onClickProfileImg(character.id)">
+        <span class="character-profile__name" >{{character.name}}</span>
+      </div>
+      <div class="character-profile__body">
+        <span class="character-profile__species" >{{character.species | translate}}</span>
+        <div class="character-profile__state">
+          <strong>Estado:</strong>
+          <div class="character-profile__state-badge">{{character.status | translate}}</div>
+        </div>
+        <p class="character-profile__first-episode">
+          <strong>Primer Episodio: </strong>
+          <span>"{{getFirstEpisodeName(character.id)}}"</span>
+        </p>
+        <div class="character-profile__last-location" (click)="onClickLocation(character.id)">
+          <img src="../../../../assets/svg/location.svg" alt="">
+          <p>
+            <strong>Última ubicación conocida: </strong>
+            <span>"{{character.location.name}}"</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<app-paginator [paginatorNavInfo]="paginatorNavInfo" (eventEmit)="paginatoreChange($event)"></app-paginator>
+</div>
+
+<div  *ngIf="!searchResult.results.length" class="character-results-no-results">
+  <app-no-characters></app-no-characters>
+</div>
+
+<app-modal *ngIf="showCharacterModal" id="characterProfile"
+  (eventEmit)="toggleModals($event)">
+  <app-complete-character-profile [character]="selectedCharacter" ></app-complete-character-profile>
+</app-modal>
+
+<app-modal *ngIf="showLocationModal" id="locationProfile" (eventEmit)="toggleModals($event)" >
+  <app-location-profile [locationID]="selectedLocationID" ></app-location-profile>
+</app-modal>

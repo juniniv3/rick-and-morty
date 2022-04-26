@@ -1,0 +1,164 @@
+.complete-character-profile {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.complete-character-profile__main-info {
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 320px 500px;
+  justify-content: center;
+  align-items: center;
+}
+
+.complete-character-profile__photo {
+  width: 320px;
+  height: 320px;
+}
+
+.complete-character-profile__info {
+  padding: 20px;
+  max-width: 450px;
+}
+
+@media only screen and (max-width: 900px) {
+  .complete-character-profile {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 50px;
+  }
+
+  .complete-character-profile__main-info {
+    grid-template-columns: 1fr;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  .complete-character-profile__photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: -60px;
+    position: absolute;
+  }
+}
+
+.complete-character-profile__name {
+  font-weight: bold;
+  text-align: left;
+  font-size: 30px;
+  margin-top: 15px;
+}
+
+.complete-character-profile__species {
+  padding: 4px;
+  background-color: var(--main-base-color);
+  color: #fff;
+  max-width: fit-content;
+  margin-bottom: 15px;
+}
+.complete-character-profile__label {
+  color: var(--main-text-color);
+  font-weight: bold;
+  margin-right: 15px;
+  margin-top: 5px;
+  font-size: 18px;
+}
+.complete-character-profile__labeL--main-color {
+  color: var(--main-base-color);
+}
+
+.complete-character-profile__icons-info {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.complete-character-profile__label-icon {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.complete-character-profile__icon {
+  width: 48px;
+  height: 48px;
+  transition: opacity 0.5s ease 0s;
+  object-position: center center;
+  object-fit: cover;
+  align-items: center;
+  justify-content: center;
+}
+
+.complete-character-profile__icon--home {
+  background: url(../../../../assets/svg/home.svg);
+}
+
+.complete-character-profile__icon--location {
+  background: url(../../../../assets/svg/location.svg);
+}
+
+.complete-character-profile__icon--alive {
+  background: url(../../../../assets/svg/ok.svg);
+}
+
+.complete-character-profile__icon--dead {
+  background: url(../../../../assets/svg/cancel.svg);
+}
+
+.complete-character-profile__icon--unknown {
+  background: url(../../../../assets/svg/unknown.svg);
+}
+
+.complete-character-profile__label-icon-title {
+  font-weight: bold;
+}
+
+.complete-character-episodes-info__header {
+  margin-top: 20px;
+  min-height: 50px;
+  background-color: var(--main-base-color);
+  align-items: center;
+  display: flex;
+}
+
+.complete-character-episodes-info__title {
+  color: var(--main-text-color);
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.complete-character-profile__label-icon-text {
+  flex: 1;
+  text-align: center;
+  max-height: 47px;
+  text-overflow:ellipsis;
+}
+
+.complete-character-episodes-info__body {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  max-height: 130px;
+  background-color: #fff;
+  overflow-y: scroll;
+}
+
+.complete-character-episodes-info__episode {
+  padding: 10px;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+
+@media only screen and (max-height: 500px) {
+  .complete-character-episodes-info__body {
+    max-height: 50px;
+  }
+}

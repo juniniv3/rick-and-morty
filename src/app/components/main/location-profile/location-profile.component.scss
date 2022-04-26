@@ -1,0 +1,84 @@
+.location-profile {
+  display: flex;
+  max-width: 900px;
+  max-height: 600px;
+  width: calc(100% - 100px);
+  background-color: var(--main-bg-color);
+  padding: 30px;
+  flex-direction: column;
+  margin: auto;
+  height:80vh;
+  position: relative;
+}
+
+.location-profile__information {
+  margin-bottom: 30px;
+}
+
+.location-profile__name {
+  color: var(--main-text-color);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.location-profile__type {
+  color: #fff;
+  background-color: var(--main-base-color);
+  font-weight: bold;
+  padding: 2px 7px;
+}
+
+.location-profile__residents {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-height: 500px;
+  overflow-y: scroll;
+  gap: 25px;
+  position: relative;
+}
+
+
+@media only screen and (max-width: 800px) {
+  .location-profile  {
+    max-height: 500px;
+  }
+  .location-profile__residents {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .location-profile  {
+    max-height: 400px;
+    max-width: 370px;
+  }
+  .location-profile__residents {
+    grid-template-columns: 1fr;
+  }
+}
+
+.location-profile__residents-tittle {
+  margin-bottom: 10px;
+}
+.location-profile__resident {
+  background-color: #fff;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.location-profile__resident-photo {
+    transition: opacity 0.5s ease 0s;
+    object-position: center center;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.location-profile__resident-photo-label {
+  background-color: var(--main-text-color);
+  margin-top: -28px;
+  padding: 5px;
+  color: #fff;
+  z-index: 234;
+}

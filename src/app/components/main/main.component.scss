@@ -1,0 +1,24 @@
+main {
+  height: max-content;
+  min-height: calc(100% - 120px);
+  display: grid;
+  app-filters {
+    height: 100%;
+  }
+}
+
+
+@media only screen and (max-width: 992px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  main {
+    grid-template-columns: 1fr 4fr;
+  }
+}
+
+

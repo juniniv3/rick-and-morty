@@ -1,0 +1,32 @@
+.paginator {
+  display: flex;
+  width: max-content;
+  margin: auto;
+  margin-bottom: 20px;
+  height: fit-content;
+  align-items: center;
+}
+
+@mixin paginator--buttons {
+  background-size: 80px 80px;
+  width: 80px;
+  height: 80px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.paginator__left-button {
+  background: url(../../../../assets/svg/navigateLeft.svg);
+  @include paginator--buttons;
+}
+
+.paginator__right-button {
+  background: url(../../../../assets/svg/navigateRight.svg);
+  @include paginator--buttons;
+}
+
+.paginator__counter {
+  color: var(--main-text-color);
+  font-size: 20px;
+}

@@ -1,0 +1,28 @@
+.no-characters {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 20px;
+  text-align: center;
+}
+
+.no-characters__image {
+  width: 40%;
+  max-width: 200px;
+  height: auto;
+}
+
+.no-characters__title {
+  margin-top: 20px;
+  font-size: 22px;
+}
+
+.no-characters__message {
+  font-size: 16px;
+  margin-top: 10px;
+}

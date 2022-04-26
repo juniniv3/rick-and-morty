@@ -1,0 +1,32 @@
+.main-nav {
+  background-color: var(--main-base-color);
+  height: 50px;
+}
+
+.main-nav__list{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 150px;
+}
+
+.main-nav__option {
+  margin-right: 35px;
+  a {
+    color: var(--main-text-color);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.morty-head {
+  transform: scaleX(-1);
+  height: 80px;
+  position: absolute;
+  left: 30px;
+  top: 7px;
+  object-position: center center;
+  object-fit: cover;
+}
+

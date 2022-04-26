@@ -1,0 +1,42 @@
+
+<div class="complete-character-profile">
+  <div class="complete-character-profile__main-info">
+    <img class="complete-character-profile__photo" src="{{character.image}}" alt="">
+    <div class="complete-character-profile__info">
+      <p class="complete-character-profile__name">{{character.name}}</p>
+      <div class="complete-character-profile__species">{{character.species  | translate}}</div>
+      <div class="complete-character-profile__gender">
+        <span class="complete-character-profile__label">Género</span><span>{{character.gender  | translate}}</span>
+      </div>
+      <div class="complete-character-profile__icons-info">
+        <div class="complete-character-profile__label-icon">
+          <span class="complete-character-profile__label-icon-title" >Origen</span>
+          <div class="complete-character-profile__icon complete-character-profile__icon--home"></div>
+          <span class="complete-character-profile__label-icon-text">{{character.origin.name}}</span>
+        </div>
+        <div class="complete-character-profile__label-icon">
+          <span class="complete-character-profile__label-icon-title">Ubicación</span>
+          <div class="complete-character-profile__icon complete-character-profile__icon--location"></div>
+          <span class="complete-character-profile__label-icon-text">{{character.location.name | translate}}</span>
+        </div>
+        <div class="complete-character-profile__label-icon">
+          <span class="complete-character-profile__label-icon-title" >Estado</span>
+          <div ngClass="complete-character-profile__icon complete-character-profile__icon--{{character.status.toLowerCase( )}}" class=" complete-character-profile__icon--status"></div>
+          <span class="complete-character-profile__label-icon-text">{{character.status | translate }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="complete-character-episodes-info">
+    <div class="complete-character-episodes-info__header">
+      <h3 class="complete-character-episodes-info__title">Episodios</h3>
+    </div>
+    <div class="complete-character-episodes-info__body">
+      <div *ngFor="let ep of characterEpisodes; let i = index"
+      class="complete-character-episodes-info__episode">
+        <strong>{{i+1}}.</strong> {{ep.name}}
+      </div>
+    </div>
+  </div>
+</div>
+

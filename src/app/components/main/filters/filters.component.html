@@ -1,0 +1,25 @@
+<div class="filters">
+  <form [formGroup]="filterForm" class="filters__form" (ngSubmit)="onFilter()" >
+  <input placeholder="Escribe el nombre del personaje" formControlName="name" class="filters__name" type="text">
+  <div class="filters__form-separator">
+  <label class="filters__label" for="status">Estado</label>
+  <select class="filters__select" name="status" formControlName="status"  id="status">
+    <option value="">Todos</option>
+    <option value="alive">Con vida</option>
+    <option value="dead">Muerto</option>
+    <option value="unknown">Desconocido</option>
+  </select>
+  <label class="filters__label" for="gender">Género</label>
+  <select  class="filters__select" formControlName="gender"  name="gender" id="gender">
+    <option value="">Todos</option>
+    <option value="male">Masculino</option>
+    <option value="female">Femenino</option>
+    <option value="genderless">Sin género</option>
+    <option value="unknown">Desconocido</option>
+  </select>
+  <label class="filters__label" for="species">Especie</label>
+  <input class="filters__species" type="text" formControlName="species" name="species" id="species" placeholder="Escribe la especie del personaje">
+  </div>
+  <input class="filters__filter-btn" type="submit" value="Filtrar">
+</form>
+</div>

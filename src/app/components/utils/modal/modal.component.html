@@ -1,0 +1,8 @@
+<div id="modalWindow"
+  (click)="closeModal()"
+  [className]="showModal ? 'modal-window modal-window--show' : 'modal-window'">
+  <div click-stop-propagation class="modal-content">
+    <ng-content></ng-content>
+    <span (click)="closeModal()" class="modal-window__close-button ">&times;</span>
+  </div>
+</div>
