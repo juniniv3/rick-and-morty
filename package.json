@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "github-build": "ng build --configuration production --base-href /rick-and-morty/"
+    "github-build": "ng build --configuration prod --base-href /rick-and-morty/"
   },
   "private": true,
   "dependencies": {
