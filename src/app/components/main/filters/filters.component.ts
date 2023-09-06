@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 
 
 @Component({
@@ -10,11 +10,11 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class FiltersComponent implements OnInit {
   @Output() eventEmit = new EventEmitter<string>();
 
-  filterForm = new FormGroup({
-    name: new FormControl(''),
-    status: new FormControl(''),
-    gender: new FormControl(''),
-    species: new FormControl('')
+  filterForm = new UntypedFormGroup({
+    name: new UntypedFormControl(''),
+    status: new UntypedFormControl(''),
+    gender: new UntypedFormControl(''),
+    species: new UntypedFormControl('')
   });
   constructor() { }
 
