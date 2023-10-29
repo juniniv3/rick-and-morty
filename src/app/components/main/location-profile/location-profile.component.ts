@@ -46,12 +46,10 @@ export class LocationProfileComponent implements OnInit {
       this.characterService.getCharacter(Number(residentsIDs)).subscribe(residentData =>{
         this.residents = [];
         this.residents.push(residentData);
-        console.log(this.residents)
       });
     } else {
       this.characterService.getMultipleCharacters(residentsIDs).subscribe(residentsData => {
         this.residents = residentsData;
-        console.log(this.residents)
       });
     }
   }

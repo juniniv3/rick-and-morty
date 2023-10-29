@@ -13,7 +13,7 @@ import { Character } from 'src/app/models/Character';
   styleUrls: ['./search-results.component.scss']
 })
 
-export class SearchResultsComponent implements OnInit {
+export class SearchResultsComponent {
 
   @Input() searcherParams = {};
   searchResult = {} as SearchResult;
@@ -37,9 +37,6 @@ export class SearchResultsComponent implements OnInit {
     private episodeService : EpisodeService
     ) { }
 
-  ngOnInit(): void {
-    this.searchCharacters();
-  }
 
   ngOnChanges( changes : SimpleChange){
     this.paginatorNavInfo.currentPage = 1;
@@ -80,7 +77,6 @@ export class SearchResultsComponent implements OnInit {
     this.paginatorNavInfo.totalPages = this.searchResult.info.pages;
     const nextQueryString = this.searchResult.info.next;
     const prevQueryString = this.searchResult.info.prev;
-    console.log(this.searchResult);
     if (nextQueryString && nextQueryString !== "null") {
       const nextPageNumber = this.getPageFromQueryString(nextQueryString);
       this.paginatorNavInfo.currentPage = nextPageNumber - 1;
@@ -118,9 +114,13 @@ export class SearchResultsComponent implements OnInit {
 
   getFirstEpisodesData(){
     let firstEpisodesOfRequests : Observable<Episode> [] = [];
+    const episodesIDList: number [] = [];
     this.charactersFirstEpisodes.forEach(episodeRefence => {
       const request = this.episodeService.getEpisode(episodeRefence.firstEpisodeID);
-      firstEpisodesOfRequests.push(request);
+      if(!episodesIDList.includes(episodeRefence.firstEpisodeID)){
+        episodesIDList.push(episodeRefence.firstEpisodeID);
+        firstEpisodesOfRequests.push(request);
+      }
     });
     forkJoin(firstEpisodesOfRequests).subscribe(data => {
       this.firstEpisodes = [...data];

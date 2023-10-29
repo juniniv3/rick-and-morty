@@ -14,7 +14,6 @@ export class MainComponent implements OnInit {
   }
 
   onFilter(data: {}){
-    console.log(data);
     this.searcherParams = data;
   }
 

@@ -1,4 +1,4 @@
-<div  *ngIf="searchResult.results.length" class="character-results-container">
+<div  *ngIf="searchResult.results && searchResult.results.length" class="character-results-container">
   <h2 class="search-title">Personajes Encontrados: {{searchResult.info.count}}</h2>
 
   <div class="character-results">
@@ -31,7 +31,7 @@
 <app-paginator [paginatorNavInfo]="paginatorNavInfo" (eventEmit)="paginatoreChange($event)"></app-paginator>
 </div>
 
-<div  *ngIf="!searchResult.results.length" class="character-results-no-results">
+<div  *ngIf="searchResult.results && !searchResult.results.length" class="character-results-no-results">
   <app-no-characters></app-no-characters>
 </div>
 
