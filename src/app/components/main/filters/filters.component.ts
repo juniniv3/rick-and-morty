@@ -7,7 +7,7 @@ import { UntypedFormGroup, UntypedFormControl } from '@angular/forms';
   templateUrl: './filters.component.html',
   styleUrls: ['./filters.component.scss']
 })
-export class FiltersComponent implements OnInit {
+export class FiltersComponent {
   @Output() eventEmit = new EventEmitter<string>();
 
   filterForm = new UntypedFormGroup({
@@ -17,9 +17,6 @@ export class FiltersComponent implements OnInit {
     species: new UntypedFormControl('')
   });
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   onFilter(){
     this.eventEmit.emit(this.filterForm.value);

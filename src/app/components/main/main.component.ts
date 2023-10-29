@@ -5,13 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent implements OnInit {
+export class MainComponent {
 
   searcherParams : {} = {name: '', status: '', gender: '', species: ''};
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   onFilter(data: {}){
     this.searcherParams = data;

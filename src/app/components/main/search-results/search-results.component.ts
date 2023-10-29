@@ -158,7 +158,6 @@ export class SearchResultsComponent {
     this.showLocationModal = Boolean(data);
   }
 
-
   toggleModals(data: any) {
     this.showCharacterModal = Boolean(data);
     this.showLocationModal =  Boolean(data);

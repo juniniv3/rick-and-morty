@@ -5,11 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './no-characters.component.html',
   styleUrls: ['./no-characters.component.scss']
 })
-export class NoCharactersComponent implements OnInit {
+export class NoCharactersComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
