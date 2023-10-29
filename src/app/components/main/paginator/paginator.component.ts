@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, OnInit ,Output } from '@angular/core';
   styleUrls: ['./paginator.component.scss']
 })
 
-export class PaginatorComponent implements OnInit {
+export class PaginatorComponent {
   @Output() eventEmit = new EventEmitter<string>();
   @Input() paginatorNavInfo = {
     currentPage : 1,
@@ -20,9 +20,6 @@ export class PaginatorComponent implements OnInit {
     right: "right"
   }
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   leftButtonClick(){
     if (this.paginatorNavInfo.prevPage !== 0) {
